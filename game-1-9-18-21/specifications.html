@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specifications</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        /* Main header styling */
+        .main-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e1e5eb;
+        }
+        
+        .main-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Content layout */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        /* Subheaders section */
+        .subheaders {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .subheader {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .subheader:hover {
+            background-color: #2980b9;
+        }
+        
+        .subheader.active {
+            background-color: #2c3e50;
+        }
+        
+        /* Subsubheaders and content section */
+        .subcontent {
+            flex: 3;
+            min-width: 300px;
+        }
+        
+        .subcontent-section {
+            display: none;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .subcontent-section.active {
+            display: block;
+        }
+        
+        .subsubheader {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 20px 0 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e1e5eb;
+        }
+        
+        .subsubheader:first-child {
+            margin-top: 0;
+        }
+        
+        /* Text formatting */
+        .text {
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+        
+        .subheader-text {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .subsubheader-text {
+            font-size: 0.95rem;
+            color: #555;
+            background-color: #f0f3f7;
+            padding: 12px 15px;
+            border-left: 3px solid #3498db;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        ul {
+            padding-left: 30px;
+            margin: 10px 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .subheaders {
+                width: 100%;
+            }
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-style {
+            line-height: 1.15;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+            text-align: center;
+            font-size: 50px;
+            background-color: #160094;
+            color: #007bff;
+            display: block;
+            text-shadow: /* White outline */
+                -1px -1px 0 rgb(0, 238, 255),  
+                 1px -1px 0 rgb(0, 238, 255),
+                -1px  1px 0 rgb(0, 238, 255),
+                 1px  1px 0 rgb(0, 238, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Specifications</h1>
+        </header>
+        
+        <div class="content">
+            <div class="subheaders">
+                <div class="subheader active" data-target="restrictions">Restrictions</div>
+                <div class="subheader" data-target="gamemode">Gamemode</div>
+                <div class="subheader" data-target="modifiers">Modifiers</div>
+                <div class="subheader" data-target="availablecards">Available Cards</div>
+                <div class="subheader" data-target="bannedcards">Banned Cards</div>
+                <div class="subheader" data-target="customcards">Custom Cards</div>
+                <div class="subheader" data-target="other">Other Information</div>
+            </div>
+            
+            <div class="subcontent">
+                <!-- Restrictions Section -->
+                <div id="restrictions" class="subcontent-section active">
+                    <div class="text subheader-text">
+                        This section contains the restrictions that were given to players during their deck setup.
+                    </div>
+                    
+                    <h3 class="subsubheader">General Restrictions</h3>
+                    <div class="text subsubheader-text">
+                        <ul>
+                            <li>Maximum number of cards in deck: 8 cards</li>
+                            <li>Maximum number of points for building deck: 50 points</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsubheader">Card-Based Restrictions</h3>
+                    <div class="text subsubheader-text">
+                        <ul>
+                            <li>Limit of Village Killers (Duelist, Ninja, Gunner, Musketeer, Witch) is 2.</li>
+                            <li>Limit of Village Night Protectors (Deflector, Ghost Lady, Doctor, Lamenter, Beast Hunter, Flagger and Forger) is 2 for each, and 3 in total.</li>
+                            <li>Limit of Role Changers (Cursed, Lurker, Werewolf Fan, Grave Robber) is 2.</li>
+                            <li>Limit of choosing Forkman or Regular Werewolf is 1 in total.</li>
+                            <li>Limit of choosing Astronomer or Rainmaker is 2 in total.</li>
+                            <li>Limit of choosing Avenger is 2.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Gamemode Section -->
+                <div id="gamemode" class="subcontent-section">
+                    <div class="text subheader-text">
+                        This section contains the gamemode(s) that was played this game.
+                    </div>
+                    
+                    <h3 class="subsubheader">Creativity Workshop</h3>
+                    <div class="text subsubheader-text">
+                        While creating decks, each player can create 2 cards of their own and use them in their deck if host approves it. It will not be announced what custom cards exist in game. Description of a custom card will be revealed after its death. If a custom card uses an ability or kills another card, the name of the card that did the action will not be revealed. A player can also choose to not submit any custom cards or submit only one custom card.
+                        Abilities of cards that hide roles upon death will not work on custom cards.
+                    </div>
+                </div>
+                
+                <!-- Modifiers Section -->
+                <div id="modifiers" class="subcontent-section">
+                    <div class="text subheader-text">
+                        This section contained the modifiers that were played with in this game, if any. Modifiers are the special conditions that can alter the gameplay and game experience when activated.
+                    </div>
+                    
+                    <h3 class="subsubheader">No Modifiers were picked this game</h3>
+                </div>
+
+                <!--Available Cards section-->
+                <div id="availablecards" class="subcontent-section">
+                    <div class="text subheader-text">
+                        This section contains the categories of cards that could be picked this game.
+                    </div>
+                    
+                    <h3 class="subsubheader">All Cards</h3>
+                    <div class="text subsubheader-text">
+                        These are all the cards available in a game by default, unless stated otherwise by the host.
+                    </div>
+
+                    <h3 class="subsubheader">Cards in Testing</h3>
+                    <div class="text subsubheader-text">
+                        These are the cards that are currently in testing mode and not fully added in game.
+                    </div>
+                </div>
+                
+                <!-- Banned Cards Section -->
+                <div id="bannedcards" class="subcontent-section">
+                    <div class="text subheader-text">
+                        This section contains the cards that was banned from being picked this game (if any).
+                    </div>
+                    
+                    <h3 class="subsubheader">No cards were banned this game.</h3>
+                </div>
+
+                <!-- Custom Cards Section -->
+                <div id="customcards" class="subcontent-section">
+                    <div class="text subheader-text">
+                        This section contains the list of custom cards that were created by the players for this game.
+                    </div>
+
+                    <h3 class="subsubheader">Caterpillar (6)</h3>
+                    <div class="text subsubheader-text">
+                        Each night can lay a seed on one of your cards. Next night, that card will form a cocoon around it, thus protecting it for the next 6 phases, after which it breaks. A card cannot perform its abilities while inside the cocoon. Already placed/existing abilities will still work.
+                        Cocoon breaks on the first attack or lynch attempt. Cocoon can also be broken manually, but manually breaking it takes one phase during which a card cannot be protected.
+                        <ul>
+                            <li>Alignment: Villager</li>
+                            <li>Aura: Good</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="subsubheader">Cat (5)</h3>
+                    <div class="text subsubheader-text">
+                        Once per game you may reveal the highest valued card of one of your opponents' deck and its location. On night 1 host will send a message in #news that says: "Announcement from an Unknown Card: 9hi nub".
+                        <ul>
+                            <li>Alignment: Villager</li>
+                            <li>Aura: Good</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="subsubheader">Diplomat (5)</h3>
+                    <div class="text subsubheader-text">
+                        You automatically win if more than half of the alive cards belong to you, and if Diplomat is still alive.
+                        <ul>
+                            <li>Alignment: Miscellaneous</li>
+                            <li>Aura: Unknown</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="subsubheader">Ancestor (6)</h3>
+                    <div class="text subsubheader-text">
+                        At night, you can select two or more cards to make them a tribe. This selection can't be changed. The first time a card from the tribe is attacked, it will be saved (except for day lynch). The second time a card from the tribe is attacked, it will die, and the saved card will die too. You can then make a new tribe.
+                        <ul>
+                            <li>Alignment: Villager</li>
+                            <li>Aura: Good</li>
+                            <li>Protection: Passive</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsubheader">Vanity (9)</h3>
+                    <div class="text subsubheader-text">
+                        Every night, select an enemy card and a target. You will copy that card's ability and use it on the target.
+                        You cannot receive feedback or information about the ability and the person vanity'd will receive the info and Vanity cannot select the same enemy card for the rest of the game.
+                        Abilities that does not have a specific target & Factional ww/solo kills cannot be copied. If a card doesn't have any charges of ability left, its ability cannot be copied too.
+                        <ul>
+                            <li>Alignment: Miscellaneous</li>
+                            <li>Aura: Unknown</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsubheader">Herbalist (9)</h3>
+                    <div class="text subsubheader-text">
+                        <img src="herbalist.png">
+                        <ul>
+                            <li>Alignment: Miscellaneous</li>
+                            <li>Aura: Unknown</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsubheader">Stacker (6)</h3>
+                    <div class="text subsubheader-text">
+                        Each day he can choose to not vote to stack his current vote. Stacker can use stacked votes in day votings, but each stacked vote works only one time.
+                        Stacker can use up to 4 votes at once maximum.
+                        <ul>
+                            <li>Alignment: Villager</li>
+                            <li>Aura: Good</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="subsubheader">Engineer (12)</h3>
+                    <div class="text subsubheader-text">
+                        At night, Engineer starts with 200 metal and gains 30 metal every night. At night, it can build one of these structures:
+                        <ul>
+                            <li>Sentry costs 130 metal. Sentry is placed on one of your cards; cards attacking it will be killed by Sentry and their protection will be bypassed (but it won't protect the card from attacks). After 2 attacks it dies. Engineer can use 150 metal ONCE to repair it and activate it same night (but not change the target on which it is placed).</li>
+                            <li>Dispenser costs 100 metal. Dispenser is placed between 2 neighbour cards, heals both of them so they won't die at night, dies after protecting from 2 attacks and cannot be repaired.</li>
+                            <li>Teleporter costs 100 metal. Engineer can place an entrance and an exit on one of his attackers and on an opponent's card. Attacking that card afterwards will ignore protection, Teleporter doesn't count as a protection.</li>
+                        </ul>
+                        Everything, after placed, will turn on the next night. Moving one of these structures at night costs 50 metal, and Engineer cannot build new structures while moving one of them.
+                        <ul>
+                            <li>Alignment: Villager</li>
+                            <li>Aura: Unknown</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsubheader">Forture Teller (6)</h3>
+                    <div class="text subsubheader-text">
+                        You start knowing all the custom cards in the game and their descriptions, but not who has these cards.
+                        <ul>
+                            <li>Alignment: Villager</li>
+                            <li>Aura: Good</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="subsubheader">Necromancer (7)</h3>
+                    <div class="text subsubheader-text">
+                        Once this card dies you can choose a card in your deck to revive secretly (it can revive the cards that died during the same phase or earlier). The inventory stays the same as it was the moment of death.
+                        <ul>
+                            <li>Alignment: Villager</li>
+                            <li>Aura: Unknown</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsubheader">Guest (4)</h3>
+                    <div class="text subsubheader-text">
+                        Every night, the current owner of this card can send it to attach itself to another player's card, roleblocking it while its attached. That player will then own the card and can use it to vote during the day. If the card the Guest is currently attached to dies, Guest will also die. When the Guest leaves the original deck containing it, it will show it as (missing) and therefore cant be targeted. When this card dies, it will return to the original deck labeled dead.
+                        <ul>
+                            <li>Alignment: Villager</li>
+                            <li>Aura: Good</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="subsubheader">Mr. Schrodinger (5)</h3>
+                    <div class="text subsubheader-text">
+                        This card owns 2 card slots. Each night, this card can choose which of the two card slots to occupy until the next night. Any interaction with the unoccupied slot will result to nothing, any information checks will say "No information was received".
+                        <ul>
+                            <li>Alignment: Villager</li>
+                            <li>Aura: Good</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--Other Information Section-->
+                <div id="other" class="subcontent-section">
+                    <div class="text subheader-text">
+                        This section contains other specifications about this game that is not mentioned anywhere above.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript to handle tab switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const subheaders = document.querySelectorAll('.subheader');
+            
+            subheaders.forEach(subheader => {
+                subheader.addEventListener('click', function() {
+                    // Remove active class from all subheaders and subcontent sections
+                    document.querySelectorAll('.subheader').forEach(el => el.classList.remove('active'));
+                    document.querySelectorAll('.subcontent-section').forEach(el => el.classList.remove('active'));
+                    
+                    // Add active class to clicked subheader
+                    this.classList.add('active');
+                    
+                    // Show corresponding content section
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+    <a href="archives.html" class="back-style">Back</a>
+</body>
+</html>
