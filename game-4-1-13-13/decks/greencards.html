@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Cards</title>
+    <style>
+        body {
+            color: #ffffff;
+            background-color: #000000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: rgb(0, 255, 0);
+            text-align: center;
+            font-size: 50px;
+            font-family: monospace;
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        
+        th {
+            font-weight: bold;
+        }
+        
+        .total {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-style {
+            text-align: center;
+            font-size: 50px;
+            background-color: #160094;
+            color: #007bff;
+            display: block;
+            text-shadow: /* White outline */
+                -1px -1px 0 rgb(0, 238, 255),  
+                 1px -1px 0 rgb(0, 238, 255),
+                -1px  1px 0 rgb(0, 238, 255),
+                 1px  1px 0 rgb(0, 238, 255);
+        }
+    </style>
+</head>
+<body>
+    <h1>Green's Deck</h1>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Card Name</th>
+            <th>Cost</th>
+            <th>Death</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>G1</th>
+            <td>Mandatory Wolf</td>
+            <td>12</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>G2</th>
+            <td>Lawyer</td>
+            <td>2</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>G3</th>
+            <td>Regular Villager (Forky)</td>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>G4</th>
+            <td>Lawyer</td>
+            <td>2</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>G5</th>
+            <td>Serial Killer</td>
+            <td>21</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>G6</th>
+            <td>Lawyer</td>
+            <td>2</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+    
+    <div class="total" id="totalPoints">Total points spent: </div>
+    
+    <script>
+        // Calculate the sum of the Cost column (3rd column)
+        const costCells = document.querySelectorAll('tbody td:nth-child(3)');
+        let sum = 0;
+        
+        costCells.forEach(cell => {
+            const value = parseInt(cell.textContent);
+            if (!isNaN(value)) {
+                sum += value;
+            }
+        });
+        
+        // Display the total
+        document.getElementById('totalPoints').textContent += sum;
+    </script>
+<br> <a href="../decks.html" class="back-style">Back</a>
+</body>
+</html>
