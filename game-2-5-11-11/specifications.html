@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specifications</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        /* Main header styling */
+        .main-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e1e5eb;
+        }
+        
+        .main-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Content layout */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        /* Subheaders section */
+        .subheaders {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .subheader {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .subheader:hover {
+            background-color: #2980b9;
+        }
+        
+        .subheader.active {
+            background-color: #2c3e50;
+        }
+        
+        /* Subsubheaders and content section */
+        .subcontent {
+            flex: 3;
+            min-width: 300px;
+        }
+        
+        .subcontent-section {
+            display: none;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .subcontent-section.active {
+            display: block;
+        }
+        
+        .subsubheader {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 20px 0 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e1e5eb;
+        }
+        
+        .subsubheader:first-child {
+            margin-top: 0;
+        }
+        
+        /* Text formatting */
+        .text {
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+        
+        .subheader-text {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .subsubheader-text {
+            font-size: 0.95rem;
+            color: #555;
+            background-color: #f0f3f7;
+            padding: 12px 15px;
+            border-left: 3px solid #3498db;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        ul {
+            padding-left: 30px;
+            margin: 10px 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .subheaders {
+                width: 100%;
+            }
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-style {
+            line-height: 1.15;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+            text-align: center;
+            font-size: 50px;
+            background-color: #160094;
+            color: #007bff;
+            display: block;
+            text-shadow: /* White outline */
+                -1px -1px 0 rgb(0, 238, 255),  
+                 1px -1px 0 rgb(0, 238, 255),
+                -1px  1px 0 rgb(0, 238, 255),
+                 1px  1px 0 rgb(0, 238, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Specifications</h1>
+        </header>
+        
+        <div class="content">
+            <div class="subheaders">
+                <div class="subheader active" data-target="restrictions">Restrictions</div>
+                <div class="subheader" data-target="gamemode">Gamemode</div>
+                <div class="subheader" data-target="modifiers">Modifiers</div>
+                <div class="subheader" data-target="availablecards">Available Cards</div>
+                <div class="subheader" data-target="bannedcards">Banned Cards</div>
+                <div class="subheader" data-target="other">Other Information</div>
+            </div>
+            
+            <div class="subcontent">
+                <!-- Restrictions Section -->
+                <div id="restrictions" class="subcontent-section active">
+                    <div class="text subheader-text">
+                        This section contains the restrictions that were given to players during their deck setup.
+                    </div>
+                    
+                    <h3 class="subsubheader">General Restrictions</h3>
+                    <div class="text subsubheader-text">
+                        <ul>
+                            <li>Maximum number of cards in deck: 8 cards</li>
+                            <li>Maximum number of points for building deck: 50 points</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsubheader">Card-Based Restrictions</h3>
+                    <div class="text subsubheader-text">
+                        <ul>
+                            <li>Limit of Village Killers (Duelist, Ninja, Gunner, Musketeer, Witch) is 2.</li>
+                            <li>Limit of Village Night Protectors (Deflector, Ghost Lady, Doctor, Lamenter, Beast Hunter, Flagger and Forger) is 2 for each, and 3 in total.</li>
+                            <li>Limit of Role Changers (Cursed, Lurker, Werewolf Fan, Grave Robber) is 2.</li>
+                            <li>Limit of choosing Forkman or Regular Werewolf is 1 in total.</li>
+                            <li>Limit of choosing Astronomer or Rainmaker is 2 in total.</li>
+                            <li>Limit of choosing Avenger is 2.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Gamemode Section -->
+                <div id="gamemode" class="subcontent-section">
+                    <div class="text subheader-text">
+                        This section contains the gamemode(s) that was played this game.
+                    </div>
+                    
+                    <h3 class="subsubheader">Classic</h3>
+                    <div class="text subsubheader-text">
+                        No special gamemode have been played in this game.
+                    </div>
+                </div>
+                
+                <!-- Modifiers Section -->
+                <div id="modifiers" class="subcontent-section">
+                    <div class="text subheader-text">
+                        This section contained the modifiers that were played with in this game, if any. Modifiers are the special conditions that can alter the gameplay and game experience when activated.
+                    </div>
+                    
+                    <h3 class="subsubheader">Classic</h3>
+                    <div class="text subsubheader-text">
+                        No modifiers were picked in this game.
+                    </div>
+                </div>
+
+                <!--Available Cards section-->
+                <div id="availablecards" class="subcontent-section">
+                    <div class="text subheader-text">
+                        This section contains the categories of cards that could be picked this game.
+                    </div>
+                    
+                    <h3 class="subsubheader">All Cards</h3>
+                    <div class="text subsubheader-text">
+                        These are all the cards available in a game by default, unless stated otherwise by the host.
+                    </div>
+
+                    <h3 class="subsubheader">Cards in Testing</h3>
+                    <div class="text subsubheader-text">
+                        These are the cards that are currently in testing mode and not fully added in game.
+                    </div>
+                </div>
+                
+                <!-- Banned Cards Section -->
+                <div id="bannedcards" class="subcontent-section">
+                    <div class="text subheader-text">
+                        This section contains the cards that was banned from being picked this game (if any).
+                    </div>
+                    
+                    <h3 class="subsubheader">Default</h3>
+                    <div class="text subsubheader-text">
+                        No cards were banned in this game.
+                    </div>
+                </div>
+
+                <!--Other Information Section-->
+                <div id="other" class="subcontent-section">
+                    <div class="text subheader-text">
+                        This section contains other specifications about this game that is not mentioned anywhere above.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript to handle tab switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const subheaders = document.querySelectorAll('.subheader');
+            
+            subheaders.forEach(subheader => {
+                subheader.addEventListener('click', function() {
+                    // Remove active class from all subheaders and subcontent sections
+                    document.querySelectorAll('.subheader').forEach(el => el.classList.remove('active'));
+                    document.querySelectorAll('.subcontent-section').forEach(el => el.classList.remove('active'));
+                    
+                    // Add active class to clicked subheader
+                    this.classList.add('active');
+                    
+                    // Show corresponding content section
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+    <a href="archives.html" class="back-style">Back</a>
+</body>
+</html>
